@@ -2,7 +2,7 @@ import {useState } from 'react'
 import {ethers } from 'ethers'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import { useRouter } from 'next/router'
-import Web3Modal from 'web3modal'
+// import Web3Modal from 'web3modal'
 
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0');
 
@@ -11,7 +11,7 @@ import {
 } from '../config';
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json';
 import Market from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json';
-import { EtherscanProvider } from '@ethersproject/providers'
+// import { EtherscanProvider } from '@ethersproject/providers'
 // import Image from 'next/Image'
 
 
@@ -136,8 +136,12 @@ export default function CreateNft() {
     }
 
     return (
+
+        <div className='bg-slate-900 min-h-screen'>
+        <div className="text-green-500 bg-slate-900 text-sm text-start mx-20 pt-2 h-6">{message}</div>
         <div className="flex justify-center bg-slate-900 min-h-screen">
-            <div className="w-1/3 mt-8 h-fit flex flex-col ">
+        {/* <div className="text-green-500 bg-slate-900 text-xs text-start mx-20 pt-2 h-6">{message}</div> */}
+            <div className="w-1/2 mt-8 h-fit flex flex-col ">
                 <input 
                     placeholder="NFT Name"
                     className="mt-2 border text-white border-gray-300 rounded p-4 bg-transparent"
@@ -170,8 +174,9 @@ export default function CreateNft() {
                     <button onClick={createItem}
                      className="font-bold mt-4 bg-green-500 text-white rounded p-4 shadow-lg"
                      >Create NFT</button>
-                     <div className="text-green-500 text-center mt-3">{message}</div>
+                     {/* <div className="text-green-500 text-center mt-3">{message}</div> */}
             </div>
+        </div>
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Web3Modal from "web3modal"
-import Image from 'next/image'
+// import Web3Modal from "web3modal"
+// import Image from 'next/image'
 
 import {
   nftmarketaddress, nftaddress
@@ -105,7 +105,7 @@ export default function Dashboard() {
   return (
     <div className='px-4 bg-slate-900 min-h-screen pb-24'>
 
-      <div className="text-green-500 bg-slate-900 text-xs text-start mx-20 pt-2 h-6">{message}</div>
+      <div className="text-green-500 bg-slate-900 text-sm text-start mx-20 pt-2 h-6">{message}</div>
 
       <div className="p-4 text-center">
         <h2 className="text-3xl font-body text-white pt-6 pb-8">Items Created</h2>

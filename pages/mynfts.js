@@ -1,8 +1,8 @@
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Web3Modal from "web3modal"
-import Image from 'next/image'
+// import Web3Modal from "web3modal"
+// import Image from 'next/image'
 
 import {
   nftmarketaddress, nftaddress
@@ -159,7 +159,7 @@ export default function MyNFTs() {
   if (loadingState === 'noMetamask' && !nfts.length) return (<h1 className="py-10 px-20 text-3xl min-h-screen text-gray-600 bg-slate-900">No ethereum Wallet Detected</h1>)
   return (
     <div className='bg-slate-900 min-h-screen'>
-        <div className="text-green-500 bg-slate-900 text-xs text-start mx-20 pt-2 h-6">{showIn}</div>
+        <div className="text-green-500 bg-slate-900 text-sm text-start mx-20 pt-2 h-6">{showIn}</div>
 
     <div className='flex flex-col justify-center w-full items-center bg-slate-900'>
     <p className='text-white'>Enter Asking Price for Selling NFTs (price in ETH)</p>

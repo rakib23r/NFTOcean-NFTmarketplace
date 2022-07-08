@@ -2,8 +2,8 @@ import { useRouter } from "next/dist/client/router";
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Web3Modal from "web3modal"
-import Image from 'next/image'
+// import Web3Modal from "web3modal"
+// import Image from 'next/image'
 
 import {
   nftmarketaddress, nftaddress
@@ -25,7 +25,7 @@ const TokenId = () => {
 
     const [dataFetched, setDataFetched] = useState(false);
     const [outofIndex, setOutofIndex] = useState(false);
-    const [loadingState, setLoadingState] = useState('not-loaded')
+    // const [loadingState, setLoadingState] = useState('not-loaded')
 
  
 
@@ -88,6 +88,7 @@ const TokenId = () => {
         
             let item = {
                 price,
+                isSold:listedToken.sold,
                 tokenId: listedToken.tokenId.toNumber(),
                 seller: listedToken.seller,
                 owner: listedToken.owner,
@@ -126,16 +127,16 @@ const TokenId = () => {
 
     return(
         <div className="bg-slate-900 min-h-screen">
-            <div className="text-green-500 bg-slate-900 text-xs text-start mx-20 pt-2 h-6">{message}</div>
+            <div className="text-green-500 bg-slate-900 text-sm text-start mx-20 pt-2 h-6">{message}</div>
 
-            <div className="flex  ml-20 pt-20">
-                <img src={data.image} alt="" className="w-1/5 border-2" />
-                <div className="text-l ml-20 space-y-8 text-gray-500 shadow-xl rounded-lg border-2 p-5">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10 pt-10">
+                <img src={data.image} alt="" className="w-64 border-2 h-80 object-cover rounded-lg" />
+                <div className="text-l w-auto text-gray-500 shadow-xl rounded-lg border-2 p-5">
                     <div>
                     <p className="text-xl text-green-400 font-body uppercase pt-1 h-8">{data.name}</p>
                     </div>
                     <div>
-                    <p className="text-md text-gray-200 font-body uppercase pt-1 h-28">{data.description}</p>
+                    <p className="text-md text-gray-200 font-body uppercase pt-1 h-24">{data.description}</p>
                     </div>
                     <div>
                     <div className='flex items-center'>
@@ -150,9 +151,14 @@ const TokenId = () => {
                   <p className="text-l font-bold text-white mx-2">{data.price}</p>
                   </div>
                     </div>
+                    <div className="p-4 text-xl text-green-500">
+                        {data.isSold ? <p> Sold Out</p> : <p> Available </p>}
+                    </div>
                     <div>
-                        <p>Owner : <span className="text-xs font-bold  text-gray-200">{data.owner}</span></p>
-                        <p>Seller : <span className="text-xs font-bold text-gray-200">{data.seller}</span> </p>
+                        <p>Owner :  </p>
+                        <span className="text-xs  text-gray-200">{data.owner}</span>
+                        <p>Seller :  </p>
+                        <span className="text-xs text-gray-200">{data.seller}</span>
                     </div>
                     <div>
                     {/* { currAddress == data.owner || currAddress == data.seller ?

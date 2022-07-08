@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Web3Modal from "web3modal";
 import { nftaddress, nftmarketaddress } from '../config';
-import styles from '../styles/Home.module.css'
-import Link from 'next/dist/client/link';
+// import styles from '../styles/Home.module.css'
+// import Link from 'next/dist/client/link';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faAdobe } from '@fortawesome/free-brands-svg-icons/faAdobe'
 
@@ -128,7 +128,7 @@ export default function Home() {
 
    return (
     <div className='bg-slate-900 min-h-screen'>
-    <div className="text-green-500 bg-slate-900 text-xs text-start mx-20 pt-2 h-6">{message}</div>
+    <div className="text-green-500 bg-slate-900 text-sm text-start mx-20 pt-2 h-6">{message}</div>
     <div className='flex justify-center pt-12'>
     
     {/* <div className="text-green-500 text-center mt-3">{message}</div> */}
